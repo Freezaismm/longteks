@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Nadine Terkasih</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #e0f2fe;    /* Biru langit sangat muda */
+            --secondary-blue: #7dd3fc;  /* Biru langit cerah */
+            --deep-blue: #0369a1;       /* Biru tua untuk teks */
+            --glass-white: rgba(255, 255, 255, 0.4);
+            --pure-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Background Biru Putih Aesthetic */
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue), var(--pure-white));
+            background-attachment: fixed;
+            color: var(--deep-blue);
+            overflow-x: hidden;
+        }
+
+        /* Floating Hearts (Putih Aesthetic) */
+        .heart {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 20px;
+            user-select: none;
+            z-index: -1;
+            pointer-events: none;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Music Controller */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--pure-white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(3, 105, 161, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--deep-blue);
+            border: 1px solid var(--secondary-blue);
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--deep-blue);
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .scroll-hint {
+            margin-top: 50px;
+            color: var(--deep-blue);
+            font-size: 14px;
+            font-weight: 500;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* Container Longteks */
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .card {
+            background: var(--glass-white);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            padding: 45px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 32px rgba(3, 105, 161, 0.1);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s ease-out;
+        }
+
+        .card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .photo-slot {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            border: 6px solid white;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(3, 105, 161, 0.15);
+        }
+
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        p {
+            line-height: 2;
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            color: #1e293b; /* Slate dark blue */
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            text-align: center;
+            color: var(--deep-blue);
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--deep-blue);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+        }
+
+        /* Love Button Biru Putih */
+        .love-btn {
+            background: var(--deep-blue);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 40px auto;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(3, 105, 161, 0.3);
+        }
+
+        .love-btn:hover {
+            transform: scale(1.05);
+            background: #0c4a6e;
+            box-shadow: 0 8px 25px rgba(3, 105, 161, 0.4);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 3rem; }
+            .card { padding: 30px; }
+            p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="music-control" onclick="toggleMusic()">
+        <span id="music-status">▶️ PUTAR MUSIK</span>
+    </div>
+    <audio id="myAudio" loop>
+        <source src="https://files.catbox.moe/qmie7c.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <h1>Haii, Nadine.</h1>
+        <p>Selamat yaa udah lolos snbtnyaa...</p>
+        <div class="scroll-hint">Tolong dibaca yaaa ✨</div>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <div class="photo-slot">
+                <img src="https://img.sanishtech.com/u/3a82de6101f49a55c82f6a06177c109f.jpg" alt="Nadine">
+            </div>
+            <p>
+                Wihh selamat yaa bisa masuk ilkom undip nihh.. aamiin wkwkkwkw yaa ini longteks sebenernya aku aga canggung sih buatnyaa, soalnyaa vibesnyaa langsung beda banget dari beberapa hari yang laluu, yang bener bener di titik saling mencintai bangett, mungkin sebulan atau beberapa bulan kebelakang tuh itu suatu hal yang uda ku perjuangin selama setahunn dan hasilnya tuh ituu, tapi dengan kebodohanku jugaa aku menghancurkan itu semua dalam sekejap, dan yaa sepertinya harus mengulang dari awal lagi... dan kali ini pasti berbedaa..
+            </p>
+        </div>
+
+        <div class="card">
+            <p>
+                Emm semangatt yaakk buat hari inii, semogaa bener hari ini pembagian SHTKAnyaa yaaa.. teruss semangatt jugaa hari ini jadi hari pertama mengurus elegiblee, teruss jugaa hari pertama uprakkk, jadi kamu harus tetep semangatt yaaa.. semoga hari ini kamu di beri kelancarann,kemudahan,sertaa ilmu yang bermanfaat yaaa.. fathan selalu mendoakan yang terbaik buat kamuu.. aa sumpaa canggung banget dee.. plisss
+            </p>
+            <div class="quote">"u are my everything nad"</div>
+        </div>
+
+        <div class="card">
+            <p>
+                terimakasih yaa untuk segala galanyaaa, yang sudaa ku sebutin tiap hari kebaikanmuu.. dann yaakk sumpaa, aku sumpahin kamu sukses dunia akhirattt.. atas semua kebaikanmu yang sudah kamu tebarr di dunia inii, kamu udah jadi orang terbaik yang pernah aku temui nadd.. terimakasihh banyakk yaaa
+            </p>
+            <p>
+                yasudaa tetep semangatt yaa buat besokk, walaupun ini longteks paling akward setelah adanya longteks berbulan bulann tapi semogaa longteks ini menjadikan awal untuk menjadi pribadi yanh lebih baik lagi kedepannyaa, aamiin.. selamat beristirahat yaa insan yanh indahh.. semogaa kamu mendapatkan tidur yang nyenyakk dan maksimall yaaa.. terakhirr harapanku untik besok pagii.. kita bisa berangkat dan pulang bersama lagii, lalu kita bisa dekat seperti sediakala lagii.. walaupun sulit tapi aku berharap semua itu bisa terjadii besokk.. aamiin yaallah.. yasudaa goodnightt nadineee, assalamualaikumm, je t'aimee bienn💙🩵💙🩵💙🩵💙🩵💙
+            </p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <p>thanks for everything yaa... semogaa kita bisa kembali lagi sepertii biasanyaa yaaa... maaf kalau longteks kali ini akward bangett soalnyaa aku masih di hantui rasa bersalahh yang dalemm bangett..</p>
+            <button class="love-btn" onclick="alert('merci beaucup pour adjourd hui, je t'aime bienn ❤️')">see u besokk yaa</button> 🤍</button>
+        </div>
+
+    </div>
+
+    <footer>
+        From the worst person u ever met
+    </footer>
+
+    <script>
+        // Floating Hearts Logic (Warna Putih Salju)
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '🤍'; // Heart putih biar aesthetic biru-putih
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        setInterval(createHeart, 600);
+
+        // Music Logic
+        const audio = document.getElementById("myAudio");
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                document.getElementById("music-status").innerText = "⏸️ PAUSE MUSIK";
+            } else {
+                audio.pause();
+                document.getElementById("music-status").innerText = "▶️ PUTAR MUSIK";
+            }
+        }
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
